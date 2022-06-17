@@ -2,28 +2,29 @@
   <Header />
   <div class="main-wrapper">
     <a-row>
-      <template>
-        <a-col :xxxl="4" :xxl="4" :xl="5" :lg="6" :md="6" :sm="24" :xs="24" class="main-menu">
-          <a-affix>
-            <section class="main-menu-inner">
-              <!-- <Sponsors :is-c-n="isZhCN" /> -->
-              <div>
-                <surelyVueVue />
-              </div>
-              <Menu :menus="dataSource" :active-menu-item="activeMenuItem" :is-zh-c-n="isZhCN" />
-            </section>
-          </a-affix>
-        </a-col>
-      </template>
+      <a-col :xxxl="4" :xxl="4" :xl="5" :lg="6" :md="6" :sm="24" :xs="24" class="main-menu">
+        <a-affix>
+          <section class="main-menu-inner">
+            <!-- <Sponsors :is-c-n="isZhCN" /> -->
+            <div>
+              <surelyVueVue />
+            </div>
+            <Menu :menus="dataSource" :active-menu-item="activeMenuItem" :is-zh-c-n="isZhCN" />
+          </section>
+        </a-affix>
+      </a-col>
 
       <a-col :xxxl="20" :xxl="20" :xl="19" :lg="18" :md="18" :sm="24" :xs="24">
         <section :class="mainContainerClass">
           <!-- <TopAd :is-c-n="isZhCN" /> -->
           <WWAdsVue v-if="isZhCN" />
+
           <Demo v-if="isDemo" :page-data="pageData" :is-zh-c-n="isZhCN">
             <component :is="matchCom" />
           </Demo>
+
           <router-view v-else />
+
           <a-affix v-if="headers.length" class="toc-affix" :offset-top="20">
             <a-anchor>
               <a-anchor-link
@@ -69,7 +70,6 @@ import { GLOBAL_CONFIG } from '../SymbolKey';
 import { defineComponent, inject, computed, ref, provide, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import Header from './header/index.vue';
-import Footer from './Footer.vue';
 import Menu from './Menu.vue';
 import PrevAndNext from './PrevAndNext.vue';
 import Demo from './Demo.vue';
@@ -93,7 +93,6 @@ export default defineComponent({
     RightBottomAd,
     Demo,
     Header,
-    Footer,
     Menu,
     PrevAndNext,
     CloseOutlined,
