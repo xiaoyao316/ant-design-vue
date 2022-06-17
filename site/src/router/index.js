@@ -1,10 +1,8 @@
 /* eslint-disable import/no-unresolved */
 import Layout from '../layouts/index.vue';
-import Iframe from '../layouts/Iframe.vue';
-// import Iframe from '../components/iframe.jsx';
 import demoRoutes from './demoRoutes';
-// import otherRoutes from './otherRoutes';
 import { createRouter, createWebHistory } from 'vue-router';
+
 const routes = [
   // ...otherRoutes,
   {
@@ -16,28 +14,6 @@ const routes = [
         component: () => import('../views/ComponentOverview.vue'),
       },
       ...demoRoutes,
-    ],
-  },
-  {
-    path: '/iframe',
-    component: Iframe,
-    children: [
-      {
-        path: 'layout:lang(.*)',
-        meta: {
-          category: 'Components',
-          subtitle: '布局',
-          type: '布局',
-          cols: 1,
-          title: 'Layout',
-          cover: 'https://gw.alipayobjects.com/zos/alicdn/hzEndUVEx/Layout.svg',
-        },
-        props: route => {
-          const hash = route.hash.replace('#', '');
-          return { iframeName: hash };
-        },
-        component: () => import('../../../components/layout/demo/index.vue'),
-      },
     ],
   },
   {
@@ -172,7 +148,6 @@ const routes = [
       { path: '', redirect: '/docs/vue/introduce/' },
     ],
   },
-  { path: '/debugger', component: () => import('../../debugger') },
   { path: '/:lang(.*)', redirect: '/components/overview' },
 ];
 

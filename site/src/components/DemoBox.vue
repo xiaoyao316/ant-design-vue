@@ -13,6 +13,7 @@
         <slot />
       </template>
     </section>
+
     <section class="code-box-meta markdown">
       <div class="code-box-title">
         <a :href="`#${sectionId}`">{{ title }}</a>
@@ -77,6 +78,7 @@
         </a-tooltip>
       </div>
     </section>
+
     <section :class="highlightClass">
       <div ref="codeRef" class="highlight">
         <slot v-if="type === 'TS'" name="htmlCode" />

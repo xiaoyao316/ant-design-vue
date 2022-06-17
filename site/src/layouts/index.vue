@@ -2,27 +2,7 @@
   <Header />
   <div class="main-wrapper">
     <a-row>
-      <template v-if="isMobile">
-        <a-drawer
-          key="mobile-menu"
-          :closable="false"
-          placement="left"
-          class="drawer drawer-left"
-          :visible="visible"
-          wrapper-class-name="drawer-wrapper"
-          width="60%"
-        >
-          <surelyVueVue />
-          <Menu :menus="dataSource" :active-menu-item="activeMenuItem" :is-zh-c-n="isZhCN" />
-          <template #handle>
-            <div class="drawer-handle" @click="handleClickShowButton">
-              <close-outlined v-if="visible" :style="iconStyle" />
-              <MenuOutlined v-else :style="iconStyle" />
-            </div>
-          </template>
-        </a-drawer>
-      </template>
-      <template v-else>
+      <template>
         <a-col :xxxl="4" :xxl="4" :xl="5" :lg="6" :md="6" :sm="24" :xs="24" class="main-menu">
           <a-affix>
             <section class="main-menu-inner">
@@ -35,6 +15,7 @@
           </a-affix>
         </a-col>
       </template>
+
       <a-col :xxxl="20" :xxl="20" :xl="19" :lg="18" :md="18" :sm="24" :xs="24">
         <section :class="mainContainerClass">
           <!-- <TopAd :is-c-n="isZhCN" /> -->
@@ -59,6 +40,7 @@
             </a-anchor>
           </a-affix>
         </section>
+
         <div class="fixed-widgets" :style="isZhCN ? { bottom: '175px' } : {}">
           <a-dropdown placement="top">
             <template #overlay>
@@ -75,8 +57,8 @@
             </a-avatar>
           </a-dropdown>
         </div>
+
         <PrevAndNext :menus="menus" :current-menu-index="currentMenuIndex" :is-zh-c-n="isZhCN" />
-        <Footer />
       </a-col>
     </a-row>
   </div>
