@@ -5,10 +5,6 @@
       <a-col :xxxl="4" :xxl="4" :xl="5" :lg="6" :md="6" :sm="24" :xs="24" class="main-menu">
         <a-affix>
           <section class="main-menu-inner">
-            <!-- <Sponsors :is-c-n="isZhCN" /> -->
-            <div>
-              <surelyVueVue />
-            </div>
             <Menu :menus="dataSource" :active-menu-item="activeMenuItem" :is-zh-c-n="isZhCN" />
           </section>
         </a-affix>
@@ -79,7 +75,6 @@ import Sponsors from '../components/rice/sponsors.vue';
 import RightBottomAd from '../components/rice/right_bottom_rice.vue';
 import { CloseOutlined, MenuOutlined, LinkOutlined } from '@ant-design/icons-vue';
 import ThemeIcon from './ThemeIcon.vue';
-import surelyVueVue from '../components/surelyVue.vue';
 import WWAdsVue from '../components/rice/WWAds.vue';
 
 const rControl = /[\u0000-\u001f]/g;
@@ -98,7 +93,6 @@ export default defineComponent({
     CloseOutlined,
     MenuOutlined,
     ThemeIcon,
-    surelyVueVue,
     WWAdsVue,
     LinkOutlined,
   },

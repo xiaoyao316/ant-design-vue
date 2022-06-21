@@ -3,31 +3,6 @@
   "version": "3.2.5",
   "title": "Ant Design Vue",
   "description": "An enterprise-class UI design language and Vue-based implementation",
-  "keywords": [
-    "vue",
-    "vue3",
-    "ant",
-    "design",
-    "antd",
-    "vueComponent",
-    "component",
-    "components",
-    "ui",
-    "framework",
-    "frontend"
-  ],
-  "main": "lib/index.js",
-  "module": "es/index.js",
-  "unpkg": "dist/antd.min.js",
-  "typings": "lib/index.d.ts",
-  "files": [
-    "dist",
-    "lib",
-    "es",
-    "scripts",
-    "vetur",
-    "typings/global.d.ts"
-  ],
   "scripts": {
     "predev": "npm run version && node node_modules/esbuild/install.js",
     "precompile": "npm run version",
@@ -62,6 +37,31 @@
     "version": "node ./scripts/generate-version",
     "sort-api": "node antd-tools/cli/run.js sort-api-table"
   },
+  "keywords": [
+    "vue",
+    "vue3",
+    "ant",
+    "design",
+    "antd",
+    "vueComponent",
+    "component",
+    "components",
+    "ui",
+    "framework",
+    "frontend"
+  ],
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "unpkg": "dist/antd.min.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "dist",
+    "lib",
+    "es",
+    "scripts",
+    "vetur",
+    "typings/global.d.ts"
+  ],
   "browserslist": [
     "> 0.5%",
     "last 2 versions",
